@@ -35,7 +35,8 @@ let rec writelines (path : string) (ls : string list ) : unit =
   ()
 ;;
 
-let pangram (input:string) (output:string) : unit =
+let pangram (paths:string * string) : unit =
+	let (input,output) = paths in
 	let in_strings = readlines input in	
 	(* checker function for one line *)
 	let rec check (str:string) (check_char:int) : bool =
